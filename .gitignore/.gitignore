@@ -1,0 +1,31 @@
+java.util.Scanner in = new java.util.Scanner(System.in);
+        int n, base1, base2, dec=0, p, a, i = 0;
+        String res = " ";
+        System.out.println("Enter Number");
+        n=in.nextInt();
+        System.out.println("Enter the current base number.");
+        base1=in.nextInt();
+        p=n;
+        while(p>0)
+        {
+            a=p%10;
+            dec+=a*Math.pow(base1,i);
+            i++;
+            p/=10;
+        }
+        System.out.println("Enter the  new base number.");
+        base2=in.nextInt();
+        System.out.println("The Decimal Equivalent is "+dec);
+        while(dec>0)
+        {
+            a=dec%base2;
+            dec/=base2;
+            if(a<10)
+            {
+                res=a+res;
+            }else{
+                res=(char)(a+55)+res;
+            }
+        }
+        System.out.println("The Base-"+base2+" Equivalent is "+res);
+    }
